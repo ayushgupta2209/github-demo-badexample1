@@ -41,12 +41,6 @@ public class EightQueens {
 		return true;
 	}
 
-	public static ArrayList<char[][]> getAllNQueens(int size){
-		ArrayList<char[][]> solutions = new ArrayList<char[][]>();
-		char[][] board = blankBoard(size);
-		solveAllNQueens(board, 0, solutions);
-		return solutions;
-	}
 
 	public static void solveAllNQueens(char[][] board, int col, ArrayList<char[][]> solutions){
 		// am I done? if so, add this solution to the ArrayList of solutions
