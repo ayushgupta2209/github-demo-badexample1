@@ -124,6 +124,20 @@ public class EightQueens {
 			Arrays.fill(result[r], '.');
 		return result;
 	}
+	/* pre: list != null
+	   post: return true if c is in list
+	*/
+	private static boolean contains(char[] list, char c)
+	{	assert ( list != null ) : "Violation of precondition: contains";
+
+		boolean found = false;
+		int index = 0;
+		while( !found && index < list.length)
+		{	found = list[index] == c;
+			index++;
+		}
+		return found;
+	}
 
 	private static boolean inbounds(int row, int col, char[][] mat){
 		return row >= 0 && row < mat.length && col >= 0 && col < mat[0].length;
@@ -144,6 +158,21 @@ public class EightQueens {
 		}
 		return square;
 	}
+		/* pre: list != null
+	   post: return true if c is in list
+	*/
+	private static boolean contains(char[] list, char c)
+	{	assert ( list != null ) : "Violation of precondition: contains";
+
+		boolean found = false;
+		int index = 0;
+		while( !found && index < list.length)
+		{	found = list[index] == c;
+			index++;
+		}
+		return found;
+	}
+
 
 	/* pre: mat != null, valid != null
 	   post: return true if all elements in mat are one of the characters in valid
@@ -163,21 +192,6 @@ public class EightQueens {
 			row++;
 		}
 		return correct;
-	}
-
-	/* pre: list != null
-	   post: return true if c is in list
-	*/
-	private static boolean contains(char[] list, char c)
-	{	assert ( list != null ) : "Violation of precondition: contains";
-
-		boolean found = false;
-		int index = 0;
-		while( !found && index < list.length)
-		{	found = list[index] == c;
-			index++;
-		}
-		return found;
 	}
 
 }
