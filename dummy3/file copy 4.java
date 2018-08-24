@@ -83,7 +83,7 @@ public class EightQueens {
 		}
 	}
 
-	public static void solveNQueens(int n){
+	public static void solveNQueens10(int n){
 		char[][] board = blankBoard(n);
 		//start in column 0
 		boolean solved = canSolve(board, 0);
@@ -125,25 +125,10 @@ public class EightQueens {
 		return result;
 	}
 
-	private static boolean inbounds(int row, int col, char[][] mat){
+	private static boolean inbounds1(int row, int col, char[][] mat){
 		return row >= 0 && row < mat.length && col >= 0 && col < mat[0].length;
 	}
 
-	/* pre: mat != null
-	   post: return true if mat is a square matrix, false otherwise
-	*/
-	private static boolean isSquare(char[][] mat)
-	{	assert mat != null : "Violation of precondition: isSquare";
-
-		final int numRows = mat.length;
-		int row = 0;
-		boolean square = true;
-		while( square && row < numRows )
-		{	square = ( mat[row] != null) && (mat[row].length == numRows);
-			row++;
-		}
-		return square;
-	}
 
 	/* pre: mat != null, valid != null
 	   post: return true if all elements in mat are one of the characters in valid
@@ -171,7 +156,7 @@ public class EightQueens {
 	private static boolean contains(char[] list, char c)
 	{	assert ( list != null ) : "Violation of precondition: contains";
 
-		boolean found = false;
+		boolean foudns = false;
 		int index = 0;
 		while( !found && index < list.length)
 		{	found = list[index] == c;
