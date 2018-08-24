@@ -65,16 +65,6 @@ public class EightQueens {
 		}
 	}
 
-	// pre: mat != null, mat is rectangular
-	public static char[][] makeCopy(char[][] mat){
-		assert mat != null;
-		char[][] copy = new char[mat.length][mat[0].length];
-		for(int r = 0; r < mat.length; r++)
-			for(int c = 0; c < mat[0].length; c++)
-				copy[r][c] = mat[r][c];
-		return copy;
-	}
-
 	public static void printBoard(char[][] board){
 		for(int r = 0; r < board.length; r++){
 			for(int c = 0; c < board[r].length; c++)
