@@ -17,37 +17,17 @@ public class EightQueens {
 
 	}
 
-	/**
-	 * determine if the chess board represented by board is a safe set up
-	 * <p>pre: board != null, board.length > 0, board is a square matrix.
-	 * (In other words all rows in board have board.length columns.),
-	 * all elements of board == 'q' or '.'. 'q's represent queens, '.'s
-	 * represent open spaces.<br>
-	 * <p>post: return true if the configuration of board is safe,
-	 * that is no queen can attack any other queen on the board.
-	 * false otherwise.
-	 * @param board the chessboard
-	 * @return true if the configuration of board is safe,
-	 * that is no queen can attack any other queen on the board.
-	 * false otherwise.
-	*/
-	public static boolean queensAreSafe(char[][] board)
-	{	char[] validChars = {'q', '.'};
-		assert (board != null) && (board.length > 0)
-				&& isSquare(board) && onlyContains(board, validChars)
-				: "Violation of precondition: queensAreSafe";
 
-
-		return true;
+	// pre: mat != null, mat is rectangular
+	public static char[][] makeCopy(char[][] mat){
+		assert mat != null;
+		char[][] copy = new char[mat.length][mat[0].length];
+		for(int r = 0; r < mat.length; r++)
+			for(int c = 0; c < mat[0].length; c++)
+				copy[r][c] = mat[r][c];
+		return copy;
 	}
-
-	public static ArrayList<char[][]> getAllNQueens(int size){
-		ArrayList<char[][]> solutions = new ArrayList<char[][]>();
-		char[][] board = blankBoard(size);
-		solveAllNQueens(board, 0, solutions);
-		return solutions;
-	}
-
+	
 	public static void solveAllNQueens(char[][] board, int col, ArrayList<char[][]> solutions){
 		// am I done? if so, add this solution to the ArrayList of solutions
 		if( col == board.length){
