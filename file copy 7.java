@@ -145,39 +145,5 @@ public class EightQueens {
 		return square;
 	}
 
-	/* pre: mat != null, valid != null
-	   post: return true if all elements in mat are one of the characters in valid
-	*/
-	private static boolean onlyContains(char[][] mat, char[] valid)
-	{	assert mat != null && valid != null : "Violation of precondition: onlyContains";
-
-		int row = 0;
-		int col;
-		boolean correct = true;
-		while( correct && row < mat.length)
-		{	col = 0;
-			while(correct && col < mat[row].length)
-			{	correct = contains(valid, mat[row][col]);
-				col++;
-			}
-			row++;
-		}
-		return correct;
-	}
-
-	/* pre: list != null
-	   post: return true if c is in list
-	*/
-	private static boolean contains(char[] list, char c)
-	{	assert ( list != null ) : "Violation of precondition: contains";
-
-		boolean found = false;
-		int index = 0;
-		while( !found && index < list.length)
-		{	found = list[index] == c;
-			index++;
-		}
-		return found;
-	}
 
 }
